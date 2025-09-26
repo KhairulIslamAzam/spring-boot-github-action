@@ -1,4 +1,5 @@
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
-COPY target/demo-1.0.0.jar app.jar
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app/app.jar"]
